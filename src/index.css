@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-stadium-bg text-slate-100 font-sans antialiased overflow-x-hidden;
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(16, 185, 129, 0.05) 0px, transparent 50%),
+      radial-gradient(at 50% 0%, rgba(30, 64, 175, 0.1) 0px, transparent 50%),
+      radial-gradient(at 100% 0%, rgba(6, 78, 59, 0.05) 0px, transparent 50%);
+  }
+
+  /* Custom Scrollbar for premium dark theme */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-stadium-bg;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-800 rounded-full transition-colors;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-stadium-green;
+  }
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: rgba(14, 22, 34, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-panel-neon-cyan {
+  background: rgba(14, 22, 34, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(0, 242, 254, 0.15);
+  box-shadow: 0 0 15px rgba(0, 242, 254, 0.05);
+}
+
+.glass-panel-neon-green {
+  background: rgba(14, 22, 34, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(57, 255, 20, 0.15);
+  box-shadow: 0 0 15px rgba(57, 255, 20, 0.05);
+}
+
+/* Glowing text and animations */
+.text-glow-cyan {
+  text-shadow: 0 0 10px rgba(0, 242, 254, 0.6);
+}
+
+.text-glow-green {
+  text-shadow: 0 0 10px rgba(57, 255, 20, 0.6);
+}
+
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(0.98);
+  }
+}
+
+.pulse-slow {
+  animation: pulse-slow 3s infinite ease-in-out;
+}
+
+@keyframes border-glow {
+  0%, 100% {
+    border-color: rgba(16, 185, 129, 0.2);
+  }
+  50% {
+    border-color: rgba(57, 255, 20, 0.6);
+  }
+}
+
+.border-glow-stadium {
+  animation: border-glow 4s infinite ease-in-out;
+}
